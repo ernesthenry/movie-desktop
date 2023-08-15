@@ -34,7 +34,7 @@ export default {
   data() {
     return {
       movies: [],
-      apiKey: "YOUR_API_KEY_HERE",
+      apiKey: "",
     };
   },
   methods: {
@@ -44,6 +44,7 @@ export default {
       )
         .then((response) => response.json())
         .then((data) => {
+          console.log("Movies", data);
           this.movies = data.results;
         });
     },
